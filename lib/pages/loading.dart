@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'dart:convert'; // JSON Decode CONVERT
 import 'package:world_time/services/world_time.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Loading extends StatefulWidget {
   const Loading({Key? key}) : super(key: key);
@@ -32,9 +33,13 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-      padding: EdgeInsets.all(50.0),
-      child: Text('loading'),
-    ));
+      backgroundColor: Colors.blue[900],
+      body: Center(
+        child: SpinKitFoldingCube(
+          color: Colors.white,
+          size: 60.0,
+        ),
+      ),
+    );
   }
 }
